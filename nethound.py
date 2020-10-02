@@ -21,6 +21,10 @@ def main():
     circular_shifter.get_lines(line_storage)
     output_controller.display(circular_shifter)
 
+    print("Alphabetically Shfited Lines")
+    alphabetic_shifter.get_shifts(circular_shifter)
+    output_controller.display(alphabetic_shifter)
+
 
 if __name__ == '__main__':
     main()
