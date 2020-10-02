@@ -14,7 +14,7 @@ def main():
     alphabetic_shifter = AlphabeticShift()
 
     input_controller.get_input(line_storage)
-    print(str(line_storage.line(1)))
+    output_controller.display(line_storage)
 
 
 if __name__ == '__main__':
