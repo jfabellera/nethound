@@ -14,6 +14,24 @@ class Line:
     def word(self, i):
         return self.__words[i]
 
+    def __lt__(self, other):
+        return self.__str__() < str(other)
+
+    def __gt__(self, other):
+        return self.__str__() > str(other)
+
+    def __le__(self, other):
+        return self.__str__() <= str(other)
+
+    def __ge__(self, other):
+        return self.__str__() >= str(other)
+
+    def __eq__(self, other):
+        return self.__str__() == str(other)
+
+    def __ne__(self, other):
+        return self.__str__() != str(other)
+
     def __len__(self):
         return len(self.__words)
 
