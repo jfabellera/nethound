@@ -1,10 +1,12 @@
 class Input:
     def __init__(self):
         self.__input_data = ''
-        self.__lines = []
+        self.__line_storage = None
 
-    def get_input(self):
-        pass
+    def get_input(self, line_storage):
+        self.__line_storage = line_storage
+        self.__get_data()
 
     def __get_data(self):
-        pass
+        self.__input_data = input()
+        self.__line_storage.set_line(self.__input_data)
