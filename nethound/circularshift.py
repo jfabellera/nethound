@@ -1,21 +1,36 @@
+from nethound.line import Line
+
 class CircularShift:
     def __init__(self):
-        pass
+        self.__input_controller = None
+        self.__shifted_lines = []
 
-    def get_lines(self):
-        pass
+    # interface to call internal functions
+    def get_lines(self, input_controller=None):
+        if input_controller is not None:
+            self.__input_controller = input_controller
+        self.__get_data()
 
+    # get lines from controller, and shift each one
     def __get_data(self):
-        pass
+        for line in self.__input_controller.lines():
+            self.__cs_line(line)
 
-    def __cs_line(self):
-        pass
+    # produce all shifts of given line, and store them
+    def __cs_line(self, line):
+        for i in range(len(line)):
+            shifted_str = ' '.join(line.words()[i::] + line.words()[:i:]) # some black magic stuff
+            shifted_line = Line(shifted_str)
+            self.__store_line(shifted_line)
 
-    def __store_line(self):
-        pass
+    # store line into __shifted_lines
+    def __store_line(self, line):
+        self.__shifted_lines.append(line)
 
+    # return an array of all shifted lines
     def lines(self):
-        pass
+        return self.__shifted_lines
 
-    def line(self):
-        pass
+    # return the ith shifted line
+    def line(self, i):
+        return self.__shifted_lines[i]

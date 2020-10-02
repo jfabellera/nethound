@@ -18,9 +18,3 @@ class LineStorage:
     # return's the ith line
     def line(self, i):
         return self.__lines[i]
-
-    def __str__(self):
-        string = ''
-        for line in self.__lines:
-            string += str(line) + '\n'
-        return string

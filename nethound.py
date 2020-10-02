@@ -14,7 +14,12 @@ def main():
     alphabetic_shifter = AlphabeticShift()
 
     input_controller.get_input(line_storage)
+    print("Input Lines")
     output_controller.display(line_storage)
+
+    print("Circularly Shifted Lines")
+    circular_shifter.get_lines(line_storage)
+    output_controller.display(circular_shifter)
 
 
 if __name__ == '__main__':
